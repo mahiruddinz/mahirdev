@@ -14,10 +14,19 @@ class EmployeeRepository
 		$this->model = $model;
 	}
 
-	public function getDatatable()
+	public function getDatatable($query)
     {
-        $data = $this->model->select('*');
-        return Datatables::of($data)->make(true);
+		return Datatables::of($query)
+            ->addIndexColumn()
+            ->addColumn('action', function($row) {
+                $btn = "<a href=\"javascript:;\" onclick=\"modal_open('detail', '".url('employees/user/'.$row->id.'')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('add', '".url('employees/user/'.$row->id.'/edit')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('add', '".route('user.create')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a>";
+                return $btn;
+            })->editColumn('join_date', function ($row) {
+                return $row->created_at->toDayDateTimeString();
+            })
+			->editColumn('salary', function ($row) {
+                return 'Rp '.number_format($row->salary);
+            })->rawColumns(['action'])->make(true);
     }
 
 	public function getAll()

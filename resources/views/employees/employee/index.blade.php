@@ -15,7 +15,7 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Table Foot</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Data Karyawan</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -23,9 +23,12 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>NIK</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th width="100px">Action</th>
+                                    <th>Jabatan</th>
+                                    <th>Gaji</th>
+                                    <th width="100px">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,8 +54,11 @@
         ajax: "{{ url('user/list') }}",
         columns: [
             {data: 'id', name: 'id'},
+            {data: 'nik', name: 'nik'},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
+            {data: 'role', name: 'role'},
+            {data: 'salary', name: 'salary'},
             {
                 data: 'action', 
                 name: 'action', 

@@ -44,14 +44,8 @@ class EmployeeController extends Controller
 
     public function getList(Request $request)
     {
-        $employees = $this->employeeService->getAllData();
         if ($request->ajax()) {
-            return Datatables::of($employees)
-            ->addIndexColumn()
-            ->addColumn('action', function($row) {
-                $btn = "<a href=\"javascript:;\" onclick=\"modal_open('detail', '".url('employees/user/'.$row->id.'')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('add', '".url('employees/user/'.$row->id.'/edit')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('add', '".route('user.create')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a>";
-                return $btn;
-            })->rawColumns(['action'])->make(true);
+            return $this->employeeService->getAllDatatables($this->employeeService->getAllData());
         }
     }
     
@@ -88,7 +82,6 @@ class EmployeeController extends Controller
     public function show($id)
     {
         $employee = $this->employeeService->getByIdData($id);
-        //dd($employee);
 
         return view('employees.employee.show', ['employee' => $employee]);
     }

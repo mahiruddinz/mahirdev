@@ -14,9 +14,9 @@ class CreateEmployeeService
 		$this->employeeRepository = $employeeRepository;
 	}
 
-	public function getAllDatatables()
+	public function getAllDatatables($query)
 	{
-		return $this->employeeRepository->getDatatable();
+		return $this->employeeRepository->getDatatable($query);
 	}
 
 	public function getAllData()
