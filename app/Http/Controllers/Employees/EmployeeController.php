@@ -38,8 +38,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-       $data = $this->employeeService->getAllData();
-        //dd($data);
+        $data = $this->employeeService->getAllData();
+        dd($data);
         return view('employees.employee.index');
     }
 
