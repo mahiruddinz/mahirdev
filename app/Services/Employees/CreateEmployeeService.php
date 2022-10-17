@@ -38,8 +38,9 @@ class CreateEmployeeService
 	{
 		$payload = [
             'nik' => $payload->nik,
-			'name' => $payload->fullname,
+			'name' => $payload->name,
 	        'email' => $payload->email,
+			'birthdate' => $payload->birthdate,
 	        'password' => Hash::make($payload->password),
 	        'role' => $payload->role,
             'join_date' => $payload->join_date,
@@ -56,8 +57,9 @@ class CreateEmployeeService
 	{
 		$payload = [
             'nik' => $payload->nik,
-			'name' => $payload->fullname,
+			'name' => $payload->name,
 	        'email' => $payload->email,
+			'birthdate' => $payload->birthdate,	
 	        'password' => Hash::make($payload->password),
 	        'role' => $payload->role,
             'join_date' => $payload->join_date,

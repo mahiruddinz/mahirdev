@@ -1,52 +1,70 @@
-<div class="row">
-                        <div class="col-xl-12">
-                            <div class="card crm-widget">
-                                <div class="card-body p-0">
-                                    <div class="row row-cols-md-3 row-cols-1">
-                                        <div class="col col-lg border-end">
-                                            <div class="py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Total Pesanan
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="mdi mdi-cart-outline display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="" data-target="">Rp 0 (0)</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col col-lg border-end">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Total Deposit
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="mdi mdi-wallet-outline display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                    <h2 class="mb-0"><span class="" data-target="">Rp 0 (0)</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col col-lg border-end">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Saldo Saya
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="mdi mdi-cash-plus display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="" data-target="">Rp 365.015.127</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                    </div><!-- end row -->
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
+<form method="post" action="{{ route('user.store') }}">
+    @csrf
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>NIK</label>
+                <input type="number" name="nik" class="form-control" placeholder="NIK" value="" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>NPWP</label>
+                <input type="number" name="npwp" class="form-control" placeholder="NPWP" value=""   >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Nama</label>
+                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="" required>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mb-2">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Email" value="" required>
+    </div>
+    <div class="form-group mb-2">
+        <label>Posisi</label>
+        <select class="form-control" name="role">
+            <option value="">-- Pilih Posisi --</option>
+            <option value="HRD">HRD</option>
+            <option value="GA">GA</option>
+            <option value="Finance">Finance</option>
+            <option value="Operator">Operator</option>
+            <option value="Project">Project</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Leader Project">Leader Project</option>
+            <option value="Creative">Creative</option>
+            <option value="Leader Creative">Leader Creative</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Tanggal Bergabung</label>
+                <input type="date" name="join_date" class="form-control" placeholder="Tanggal bergabung" value="" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Gaji</label>
+                <input type="number" name="salary" class="form-control" placeholder="Gaji" value="" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Tanggal Lahir</label>
+                <input type="date" name="birthdate" class="form-control" placeholder="TTL" value="" required>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mb-2">
+        <label>Alamat</label>
+        <textarea type="text" name="address" class="form-control" placeholder="Alamat" rows="5"></textarea>
+    </div><hr>
+    <div class="hstack gap-1 justify-content-end">
+                        <button type="reset" class="btn btn-dark"><i class="mdi mdi-cancel"></i> Reset</button>
+                        <button type="submit" class="btn btn-primary"><i class="mdi mdi-send"></i> Submit</button>
                     </div>
+</form>

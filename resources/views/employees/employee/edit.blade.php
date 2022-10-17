@@ -1,72 +1,75 @@
-@extends('layouts.master')
-@section('title') Dashboard @endsection
-@section('css')
-<link href="{{ URL::asset('assets/css/datatable.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-@endsection
-@section('content')
-@component('components.breadcrumb')
-@slot('li_1') Dashboards @endslot
-@slot('title') Dashboard @endslot
-@endcomponent
+<form method="post" action="{{ route('user.update', $employee->id) }}">
+    @csrf
     <div class="row">
-        <div class="col-xl-12">
-            <div class="card">
-                <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Table Foot</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped yajra-datatable">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th width="100px">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>NIK</label>
+                <input type="number" name="name" class="form-control" placeholder="NIK" value="{{ $employee->nik }}" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>NPWP</label>
+                <input type="number" name="npwp" class="form-control" placeholder="NPWP" value="{{ $employee->npwp }}"   >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Nama</label>
+                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{ $employee->name }}" required>
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-<script type="text/javascript">
-  $(function () {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    var table = $('.yajra-datatable').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ url('user/list') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {
-                data: 'action', 
-                name: 'action', 
-                orderable: true, 
-                searchable: true
-            },
-        ]
-    });
-  });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
-@endsection
-
+    <div class="form-group mb-2">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $employee->email }}" required>
+    </div>
+    <div class="form-group mb-2">
+        <label>Posisi</label>
+        <select class="form-control" name="role">
+            <option value="{{ $employee->role }}">-- {{ $employee->role }} (Selected) --</option>
+            <option value="">-- Pilih Posisi --</option>
+            <option value="HRD">HRD</option>
+            <option value="GA">GA</option>
+            <option value="Finance">Finance</option>
+            <option value="Operator">Operator</option>
+            <option value="Project">Project</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Leader Project">Leader Project</option>
+            <option value="Creative">Creative</option>
+            <option value="Leader Creative">Leader Creative</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Tanggal Bergabung <small class="text-danger">*Kosongkan jika tidak diubah</small></label>
+                <input type="date" name="join_date" class="form-control" placeholder="Tanggal bergabung" value="" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Gaji</label>
+                <input type="number" name="salary" class="form-control" placeholder="Gaji" value="{{ $employee->salary }}" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-2">
+                <label>Tanggal Lahir <small class="text-danger">*Kosongkan jika tidak diubah</small></label>
+                <input type="date" name="birthdate" class="form-control" placeholder="TTL" value="" required>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mb-2">
+        <label>Alamat</label>
+        <textarea type="text" name="address" class="form-control" placeholder="Alamat" rows="5">{{ $employee->address }}</textarea>
+    </div><hr>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="reset" class="btn btn-dark w-100"><i class="fa fa-history mr-1"></i> Reset</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary w-100"><i class="fa fa-paper-plane mr-1"></i> Submit</button>
+        </div>
+    </div>
+</form>

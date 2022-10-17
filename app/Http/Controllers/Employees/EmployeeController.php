@@ -68,9 +68,10 @@ class EmployeeController extends Controller
      */
     public function store(CreateEmployeeRequest $request)
     {
+        $validated = $request->validated();
         $this->employeeService->createData($request);
 
-        return redirect()->route('employees.employee.index')->with('success','Data karyawan berhasil di tambah');
+        return redirect()->route('user.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data karyawan berhasil di tambah']);
     }
 
     /**
@@ -98,7 +99,7 @@ class EmployeeController extends Controller
 
         return view('employees.employee.edit', ['employee' => $employee]);
     }
-
+ 
     /**
      * Update the specified resource in storage.
      *

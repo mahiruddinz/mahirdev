@@ -26,15 +26,26 @@ class CreateEmployeeRequest extends FormRequest
         return [
             'nik' => 'required',
             'name' => 'required',
-            'username' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:4',
             'role' => 'required',
             'join_date' => 'required',
+            'birthdate' => 'required',
             'salary' => 'required|numeric',
             'address' => 'required',
-            'npwp' => 'required',
 
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'nik.required' => 'NIK harus di isi!',
+            'email.required' => 'Email harus di isi!',
+            'name.required' => 'Nama harus di isi!',
+            'role.required' => 'Posisi harus di isi!',
+            'birthdate.required' => 'Tanggal Lahir harus di isi!',
+            'join_date.required' => 'Tanggal Bergabung harus di isi!',
+            'salary.required' => 'Gaji harus di isi!',
+            'address.required' => 'Alamat harus di isi!',
         ];
     }
 }

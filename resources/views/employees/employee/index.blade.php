@@ -13,9 +13,12 @@
 @endcomponent
     <div class="row">
         <div class="col-xl-12">
+            <div class="hstack gap-1 justify-content-end mb-2">
+                <a href="javascript:;" onclick="modal_open('add', '{{ route('user.create') }}')" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Detail"><i class="fa fa-plus mr-1"></i> Tambah Karyawan</a>
+            </div>
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Data Karyawan</h4>
+                    <h4 class="card-title mb-0 flex-grow-1"><i class="fa fa-user-group"></i> Data Karyawan</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

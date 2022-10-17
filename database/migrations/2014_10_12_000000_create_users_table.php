@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('nik')->unsigned();
             $table->string('name');
             $table->string('email')->unique();
+            $table->dateTime('birthdate');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['Operator', 'GA', 'HRD', 'Finance', 'Marketing', 'Creative', 'Project', 'Leader Project', 'Leader Creative'])->default('Operator');
