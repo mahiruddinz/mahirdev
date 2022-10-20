@@ -1,34 +1,34 @@
-<form method="POST" action="{{ route('user.update', $data->id) }}">
+<form method="POST" action="{{ route('project.update', $employee->id) }}">
     @csrf
     @method('PUT') 
     <div class="row">
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>NIK</label>
-                <input type="number" name="nik" class="form-control" placeholder="NIK" value="{{ $data->nik }}" required>
+                <input type="number" name="nik" class="form-control" placeholder="NIK" value="{{ $employee->nik }}" required>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>NPWP</label>
-                <input type="number" name="npwp" class="form-control" placeholder="NPWP" value="{{ $data->npwp }}"   >
+                <input type="number" name="npwp" class="form-control" placeholder="NPWP" value="{{ $employee->npwp }}"   >
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>Nama</label>
-                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{ $data->name }}" required>
+                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{ $employee->name }}" required>
             </div>
         </div>
     </div>
     <div class="form-group mb-2">
         <label>Email</label>
-        <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $data->email }}" required>
+        <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $employee->email }}" required>
     </div>
     <div class="form-group mb-2">
         <label>Posisi</label>
         <select class="form-control" name="role">
-            <option value="{{ $data->role }}">-- {{ $data->role }} (Selected) --</option>
+            <option value="{{ $employee->role }}">-- {{ $employee->role }} (Selected) --</option>
             <option value="">-- Pilih Posisi --</option>
             <option value="HRD">HRD</option>
             <option value="GA">GA</option>
@@ -45,25 +45,25 @@
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>Tanggal Bergabung <small class="text-danger">*Kosongkan jika tidak diubah</small></label>
-                <input type="date" name="join_date" class="form-control" placeholder="Tanggal bergabung" value="{{ $data->join_date }}">
+                <input type="date" name="join_date" class="form-control" placeholder="Tanggal bergabung" value="{{ $employee->join_date }}">
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>Gaji</label>
-                <input type="number" name="salary" class="form-control" placeholder="Gaji" value="{{ $data->salary }}" required>
+                <input type="number" name="salary" class="form-control" placeholder="Gaji" value="{{ $employee->salary }}" required>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-2">
                 <label>Tanggal Lahir <small class="text-danger">*Kosongkan jika tidak diubah</small></label>
-                <input type="date" name="birthdate" class="form-control" placeholder="TTL" value="{{ $data->birthdate }}">
+                <input type="date" name="birthdate" class="form-control" placeholder="TTL" value="{{ $employee->birthdate }}">
             </div>
         </div>
     </div>
     <div class="form-group mb-2">
         <label>Alamat</label>
-        <textarea type="text" name="address" class="form-control" placeholder="Alamat" rows="5">{{ $data->address }}</textarea>
+        <textarea type="text" name="address" class="form-control" placeholder="Alamat" rows="5">{{ $employee->address }}</textarea>
     </div><hr>
     <div class="row">
         <div class="col-md-6">

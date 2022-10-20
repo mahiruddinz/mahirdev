@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Employees;
 use App\Http\Controllers\Controller;
 use App\Services\Employees\CreateEmployeeService;
 use App\Http\Requests\Employees\CreateEmployeeRequest;
+use Illuminate\Support\Facades\Hash;
 
 use App\Http\Controllers\Employees\EmployeeController;
 use Illuminate\Http\Request;
@@ -69,7 +70,7 @@ class EmployeeController extends Controller
     public function store(CreateEmployeeRequest $request)
     {
         $validated = $request->validated();
-        $this->employeeService->createData($request);
+        $this->employeeService->createData($request->all());
 
         return redirect()->route('user.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data karyawan berhasil di tambah']);
     }
@@ -82,9 +83,9 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = $this->employeeService->getByIdData($id);
+        $data = $this->employeeService->getByIdData($id);
 
-        return view('employees.employee.show', ['employee' => $employee]);
+        return view('employees.employee.show', ['data' => $data]);
     }
 
     /**
@@ -95,9 +96,9 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employee = $this->employeeService->getByIdData($id);
+        $data = $this->employeeService->getByIdData($id);
 
-        return view('employees.employee.edit', ['employee' => $employee]);
+        return view('employees.employee.edit', ['data' => $data]);
     }
  
     /**
@@ -107,13 +108,21 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EmployeeRequest $request, $id)
+    public function update(CreateEmployeeRequest $request, $id)
     {
-        $this->employeeService->updateData($id, $request);
+        $validate = $request->validated();
+        $data = $this->employeeService->getByIdData($id);
+        $this->employeeService->updateData($id, $request->all());
 
-        return redirect()->route('employees.employee.index');
+        return redirect()->route('user.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data karyawan berhasil di ubah']);
     }
 
+    public function delete($id)
+    {
+        $data = $this->employeeService->getByIdData($id);
+
+        return view('employees.employee.delete', ['data' => $data]);
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -124,6 +133,6 @@ class EmployeeController extends Controller
     {
         $this->employeeService->deleteData($id);
 
-        return redirect()->route('employees.employee.index');
+        return redirect()->route('user.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data karyawan berhasil di hapus']);
     }
 }

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Middleware\Employees;
+namespace App\Http\Middleware\Projects;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Collection;
 
-class Employee
+class LeaderProject
 {
     /**
      * Handle an incoming request.
@@ -18,11 +17,10 @@ class Employee
      */
     public function handle(Request $request, Closure $next)
     {
-        if (in_array(Auth::user()->role, ['HRD','Operator']) == false) {
+        if (in_array(Auth::user()->role, ['Leader Project', 'HRD', 'Operator']) == false) {
             return redirect(route('home'));
         } else {
             return $next($request);
         }
-
     }
 }

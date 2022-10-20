@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('user.update', $data->id) }}">
+<form method="POST" action="{{ route('project.update', $data->id) }}">
     @csrf
     @method('PUT') 
     <div class="row">

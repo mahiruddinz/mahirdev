@@ -10,11 +10,11 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="hstack gap-1 justify-content-end mb-2">
-                <a href="javascript:;" onclick="modal_open('add', '{{ route('user.create') }}')" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Detail"><i class="fa fa-plus mr-1"></i> Tambah Karyawan</a>
+                <a href="javascript:;" onclick="modal_open('add', '{{ route('project.create') }}')" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Detail"><i class="fa fa-plus mr-1"></i> Tambah Karyawan</a>
             </div>
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1"><i class="fa fa-user-group"></i> Data Karyawan</h4>
+                    <h4 class="card-title mb-0 flex-grow-1"><i class="fa fa-list"></i> Data Project</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -22,11 +22,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>NIK</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Jabatan</th>
-                                    <th>Gaji</th>
+                                    <th>Nama Project</th>
+                                    <th>Tipe</th>
+                                    <th>Platform</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Client Closing</th>
                                     <th width="100px">Aksi</th>
                                 </tr>
                             </thead>
@@ -50,14 +50,14 @@
     var table = $('.yajra-datatable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ url('user/list') }}",
+        ajax: "{{ url('project/list') }}",
         columns: [
             {data: 'id', name: 'id'},
-            {data: 'nik', name: 'nik'},
             {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {data: 'role', name: 'role'},
-            {data: 'salary', name: 'salary'},
+            {data: 'type', name: 'type'},
+            {data: 'platform', name: 'platform'},
+            {data: 'start_date', name: 'start_date'},
+            {data: 'client_by', name: 'client_by'},
             {
                 data: 'action', 
                 name: 'action', 

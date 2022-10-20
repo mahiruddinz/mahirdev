@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Employees\Employee\Eloquent\EmployeeRepository;
+use App\Repositories\Projects\Project\Eloquent\ProjectRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(EmployeeRepository::class);
+        $this->app->bind(ProjectRepository::class);
     }
 
     /**

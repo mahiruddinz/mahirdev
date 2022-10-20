@@ -22,6 +22,7 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role' => 'Operator',
             'join_date' => now(),
+            'birthdate' => now(),
             'salary' => rand(1000000,5000000),
             'address' => 'Jl. Indraloka 1 No 17',
             'npwp' => rand(1000000,5000000),

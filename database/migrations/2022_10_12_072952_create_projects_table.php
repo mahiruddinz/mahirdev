@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->enum('type', ['Aksi', 'Bulanan', 'Outsourcing', 'Endorse', 'KOL', 'Press Release', 'Takedown', 'Verified', 'Etc']);
             $table->string('platform');
+            $table->text('description');
             $table->dateTime('start_date');
             $table->dateTime('due_date');
             $table->integer('client_by')->length(110)->unsigned();

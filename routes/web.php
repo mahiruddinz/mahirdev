@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Employees\EmployeeController;
+use App\Http\Controllers\Projects\ProjectController;
+
 use App\Http\Controllers\HomeController;
 
 /*
@@ -23,7 +25,13 @@ Route::middleware('auth')->group(function() {
 	Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::middleware('employee')->prefix('employees')->group(function () {
         Route::resource('user', EmployeeController::class);  
+        Route::get('user/{id}/delete/', [EmployeeController::class, 'delete'])->name('user.delete');
     });
+    Route::middleware('leader.project')->prefix('projects')->group(function () {
+        Route::resource('project', ProjectController::class);  
+        Route::get('project/{id}/delete/', [ProjectController::class, 'delete'])->name('project.delete');
+    });
+    Route::get('project/list', [ProjectController::class, 'getList'])->name('project.list');
     Route::get('user/list', [EmployeeController::class, 'getList'])->name('user.list');
 });
 //Update User Details

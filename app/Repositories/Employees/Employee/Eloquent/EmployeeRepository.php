@@ -18,6 +18,7 @@ class EmployeeRepository
     {
 		return Datatables::of($query)
             ->addIndexColumn()
+
             ->addColumn('action', function($row) {
                 $btn = "<a href=\"javascript:;\" onclick=\"modal_open('detail', '".url('employees/user/'.$row->id.'')."')\" class=\"btn btn-sm btn-primary\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Detail\"><i class=\"ri-eye-fill\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('edit', '".url('employees/user/'.$row->id.'/edit')."')\" class=\"btn btn-sm btn-warning\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Ubah\"><i class=\"fa fa-pencil\"></i></a> <a href=\"javascript:;\" onclick=\"modal_open('delete', '".url('employees/user/'.$row->id.'/delete')."')\" class=\"btn btn-sm btn-danger\" data-bs-toggle=\"tooltip\" data-bs-trigger=\"hover\" data-bs-placement=\"top\" title=\"Hapus\"><i class=\"fa fa-trash\"></i></a>";
                 return $btn;
@@ -31,7 +32,10 @@ class EmployeeRepository
 
 	public function getAll()
 	{
-		return $this->model->all();		
+		return $this->model->orderByDesc('id')->get();		
+	}
+	public function getWhere($key, $param, $orderby, $sort) {
+		return $this->model->where($key, $param)->orderBy($orderby, $sort)->get();
 	}
 
 	public function getPaginate($limit)

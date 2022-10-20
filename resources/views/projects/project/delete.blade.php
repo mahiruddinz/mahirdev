@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h5 class="text-center">anda yakin ingin menghapus data ini?</h5><hr>
-        <form action="{{ route('user.destroy', $data->id)}}" method="post">
+        <form action="{{ route('project.destroy', $data->id)}}" method="post">
             @csrf
             @method('DELETE')
             <div class="row">

@@ -1,42 +1,42 @@
 <?php 
 
-namespace App\Services\Employees;
+namespace App\Services\Projects\Project;
 
-use App\Repositories\Employees\Employee\Eloquent\EmployeeRepository;
+use App\Repositories\Projects\Project\Eloquent\ProjectRepository;
 use Illuminate\Support\Facades\Hash;
 
-class CreateEmployeeService
+class CreateProjectService
 {	
-	private $employeeRepository;
+	private $projectRepository;
 
-	public function __construct(EmployeeRepository $employeeRepository)
+	public function __construct(ProjectRepository $projectRepository)
 	{
-		$this->employeeRepository = $employeeRepository;
+		$this->projectRepository = $projectRepository;
 	}
 
 	public function getAllDatatables($query)
 	{
-		return $this->employeeRepository->getDatatable($query);
+		return $this->projectRepository->getDatatable($query);
 	}
 
 	public function getAllData()
 	{
-		return $this->employeeRepository->getAll();
+		return $this->projectRepository->getAll();
 	}
 
 	public function getWhereData($key, $param, $orderby, $sort)
 	{
-		return $this->employeeRepository->getWhere($key, $param, $orderby, $sort);
+		return $this->projectRepository->getWhere($key, $param, $orderby, $sort);
 	}
 
 	public function getPaginateData($limit)
 	{
-		return $this->employeeRepository->getPaginate($limit);
+		return $this->projectRepository->getPaginate($limit);
 	}
 
 	public function getByIdData($id)
 	{
-		return $this->employeeRepository->getById($id);
+		return $this->projectRepository->getById($id);
 	}
 
 	public function createData($payload)
@@ -55,20 +55,20 @@ class CreateEmployeeService
             'created_at' => now(),
 		];
 
-		return $this->employeeRepository->create($payload);
+		return $this->projectRepository->create($payload);
 	}
 
 	public function updateData($id, $payload)
 	{
 		//dd($payload['join_date']);
-		$employee = $this->employeeRepository->getById($id);
-		//dd($employee['birthdate']);
+		$project = $this->projectRepository->getById($id);
+		//dd($project['birthdate']);
 		$payload = [
 			'nik' => $payload['nik'],
 			'name' => $payload['name'],
 	        'email' => $payload['email'],
-			'join_date' => $payload['join_date'] == null ? $employee['join_date'] : $payload['join_date'],
-			'birthdate' => $payload['birthdate'] == null ? $employee['birthdate'] : $payload['birthdate'],	
+			'join_date' => $payload['join_date'] == null ? $project['join_date'] : $payload['join_date'],
+			'birthdate' => $payload['birthdate'] == null ? $project['birthdate'] : $payload['birthdate'],	
 	        'role' => $payload['role'],
             'salary' => $payload['salary'],
             'address' => $payload['address'],
@@ -76,11 +76,11 @@ class CreateEmployeeService
             'updated_at' => now(),
 		];
 		
-		return $this->employeeRepository->update($id, $payload);
+		return $this->projectRepository->update($id, $payload);
 	}
 
 	public function deleteData($id)
 	{
-		return $this->employeeRepository->delete($id);
+		return $this->projectRepository->delete($id);
 	}
 }

@@ -13,8 +13,6 @@
                 </ol>
             </div>
 
-            
-
         </div>
         @if ($errors->any())
         <div class="alert alert-danger alert-dismissible alert-solid alert-label-icon fade show" role="alert">

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Employees;
+namespace App\Http\Requests\Projects\Project;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateEmployeeRequest extends FormRequest
+class CreateProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,24 +24,21 @@ class CreateEmployeeRequest extends FormRequest
     public function rules()
     {
         return [
-            'nik' => 'required',
             'name' => 'required',
-            'email' => 'required|email',
-            'role' => 'required',
-            'salary' => 'required|numeric',
-            'address' => 'required',
-
+            'type' => 'required',
+            'platform' => 'required',
+            'client_by' => 'required',
+            'description' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'nik.required' => 'NIK harus di isi!',
-            'email.required' => 'Email harus di isi!',
+            'type.required' => 'Tipe Project harus di isi!',
+            'platform.required' => 'Platform harus di isi!',
             'name.required' => 'Nama harus di isi!',
-            'role.required' => 'Posisi harus di isi!',
-            'salary.required' => 'Gaji harus di isi!',
-            'address.required' => 'Alamat harus di isi!',
+            'client_by.required' => 'Client Closing harus di isi!',
+            'description.required' => 'Deskripsi harus di isi!',
         ];
     }
 }
