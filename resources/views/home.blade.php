@@ -29,22 +29,3 @@
         </div>
     </div>
 @endsection
-@section('script')
-<script type="text/javascript">
-  $(function () {
-    var table = $('.user_datatable').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('user.index') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
-  });
-</script>
-<script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
-@endsection
-

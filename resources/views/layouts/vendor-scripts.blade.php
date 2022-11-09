@@ -1,10 +1,5 @@
 
 
-<script type="text/javascript">
-    $(document).ready(function() {
-  $('#summernote').summernote();
-});
-</script>
 <!--datatable js-->
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
@@ -20,5 +15,14 @@
 <script src="{{ URL::asset('assets/libs/node-waves/node-waves.min.js') }}"></script>
 <script src="{{ URL::asset('assets/libs/feather-icons/feather-icons.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/pages/plugins/lord-icon-2.1.0.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/plugins.min.js') }}"></script>
 @yield('script')
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+        $('.select2').select2();
+    });
+</script>
 @yield('script-bottom')
+<script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
+

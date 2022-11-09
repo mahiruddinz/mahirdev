@@ -63,6 +63,22 @@
                     </div>
                 </li> <!-- end Dashboard Menu -->
                 @endif
+                @if (in_array(Auth::user()->role, ['Marketing','Operator']))
+                <li class="menu-title"><span>MARKETINGS</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarClient" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarClient">
+                        <i class="mdi mdi-cart"></i> <span>Client</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarClient">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('client.index') }}" class="nav-link">Data Klien</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> <!-- end Dashboard Menu -->
+                @endif
             </ul>
         </div>
         <!-- Sidebar -->

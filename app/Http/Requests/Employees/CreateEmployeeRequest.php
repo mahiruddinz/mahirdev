@@ -27,6 +27,8 @@ class CreateEmployeeRequest extends FormRequest
             'nik' => 'required',
             'name' => 'required',
             'email' => 'required|email',
+            'join_date' => '',
+            'birthdate' => '',
             'role' => 'required',
             'salary' => 'required|numeric',
             'address' => 'required',

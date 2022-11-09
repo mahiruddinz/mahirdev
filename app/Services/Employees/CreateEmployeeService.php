@@ -42,16 +42,16 @@ class CreateEmployeeService
 	public function createData($payload)
 	{
 		$payload = [
-            'nik' => $payload->nik,
-			'name' => $payload->name,
-	        'email' => $payload->email,
-			'birthdate' => $payload->birthdate,
-	        'password' => Hash::make('password'),
-	        'role' => $payload->role,
-            'join_date' => $payload->join_date,
-            'salary' => $payload->salary,
-            'address' => $payload->address,
-            'npwp' => $payload->npwp,
+            'nik' => $payload['nik'],
+			'name' => $payload['name'],
+	        'email' => $payload['email'],
+			'birthdate' => $payload['birthdate'],
+	        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+	        'role' => $payload['role'],
+            'join_date' => $payload['join_date'],
+            'salary' => $payload['salary'],
+            'address' => $payload['address'],
+            'npwp' => $payload['npwp'],
             'created_at' => now(),
 		];
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Projects\Project\CreateProjectRequest;
 use App\Services\Projects\Project\CreateProjectService;
 use App\Services\Employees\CreateEmployeeService;
+use App\Services\Marketings\CreateClientService;
 
 use App\Models\Projects\Projects;
 use Illuminate\Http\Request;
@@ -28,10 +29,11 @@ class ProjectController extends Controller
      * @param \App\Services\Projects\CreateProjectService $projectService
      * @return void
      */
-    public function __construct(CreateProjectService $projectService, CreateEmployeeService $employeeService)
+    public function __construct(CreateProjectService $projectService, CreateEmployeeService $employeeService, CreateClientService $clientService)
     {
         $this->projectService = $projectService;
         $this->employeeService = $employeeService;
+        $this->clientService = $clientService;
     }
 
     /**
@@ -41,7 +43,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects.project.index');
+        $data = $this->projectService->getAllData();
+        return view('projects.project.index', ['data' => $data]);
     }
 
     public function getList(Request $request)
@@ -59,8 +62,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $data = $this->employeeService->getWhereData('role', 'Marketing', 'name', 'DESC');
-        return view('projects.project.create', ['marketing' => $data]);
+        return view('projects.project.create', ['client' => $this->clientService->getAllData(), 'leader' => $this->employeeService->getWhereData('role', 'Leader Project', 'name', 'ASC')]);
     }
 
     /**
@@ -71,13 +73,19 @@ class ProjectController extends Controller
      */
     public function store(CreateProjectRequest $request)
     {
-        $validated = $request->validated();
-        $this->projectService->createData($request);
+        //dd($request->all());
+        $validate = $request->validated();
+        if ($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+        }
+        $this->projectService->createData($request->validated());
 
         return redirect()->route('project.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data project berhasil di tambah']);
     }
 
-    /**
+    /** 
      * Display the specified resource.
      *
      * @param  int  $id
@@ -100,7 +108,7 @@ class ProjectController extends Controller
     {
         $data = $this->projectService->getByIdData($id);
 
-        return view('projects.project.edit', ['data' => $data]);
+        return view('projects.project.edit', ['data' => $data, 'client' => $this->clientService->getAllData(), 'leader' => $this->employeeService->getWhereData('role', 'Leader Project', 'name', 'ASC')]);
     }
  
     /**
@@ -113,8 +121,7 @@ class ProjectController extends Controller
     public function update(CreateprojectRequest $request, $id)
     {
         $validate = $request->validated();
-        $data = $this->projectService->getByIdData($id);
-        $this->projectService->updateData($id, $request->all());
+        $this->projectService->updateData($id, $validate);
 
         return redirect()->route('project.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data project berhasil di ubah']);
     }

@@ -4,6 +4,7 @@ namespace App\Services\Projects\Project;
 
 use App\Repositories\Projects\Project\Eloquent\ProjectRepository;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class CreateProjectService
 {	
@@ -42,37 +43,37 @@ class CreateProjectService
 	public function createData($payload)
 	{
 		$payload = [
-            'nik' => $payload->nik,
-			'name' => $payload->name,
-	        'email' => $payload->email,
-			'birthdate' => $payload->birthdate,
-	        'password' => Hash::make('password'),
-	        'role' => $payload->role,
-            'join_date' => $payload->join_date,
-            'salary' => $payload->salary,
-            'address' => $payload->address,
-            'npwp' => $payload->npwp,
+            'client_id' => $payload['client_id'],
+			'leader_id' => $payload['leader'],
+            'name' => $payload['name'],  
+            'type' => $payload['type'],
+            'platform' => $payload['platform'],
+            'description' => $payload['description'],
+            'start_date' => $payload['start_date'],
+            'due_date' => $payload['due_date'],
+            'client_by' => Auth::user()->id,
             'created_at' => now(),
-		];
+            'updated_at' => now(),
+        ];
+
+
 
 		return $this->projectRepository->create($payload);
 	}
 
 	public function updateData($id, $payload)
 	{
-		//dd($payload['join_date']);
-		$project = $this->projectRepository->getById($id);
-		//dd($project['birthdate']);
+
 		$payload = [
-			'nik' => $payload['nik'],
-			'name' => $payload['name'],
-	        'email' => $payload['email'],
-			'join_date' => $payload['join_date'] == null ? $project['join_date'] : $payload['join_date'],
-			'birthdate' => $payload['birthdate'] == null ? $project['birthdate'] : $payload['birthdate'],	
-	        'role' => $payload['role'],
-            'salary' => $payload['salary'],
-            'address' => $payload['address'],
-            'npwp' => $payload['npwp'],
+			'client_id' => $payload['client_id'],
+            'name' => $payload['name'],  
+            'type' => $payload['type'],
+            'platform' => $payload['platform'],
+            'description' => $payload['description'],
+            'start_date' => $payload['start_date'],
+            'due_date' => $payload['due_date'],
+            'client_by' => Auth::user()->id,
+            'created_at' => now(),
             'updated_at' => now(),
 		];
 		

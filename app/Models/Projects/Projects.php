@@ -14,6 +14,17 @@ class Projects extends Model
     public function user()
     {
         // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
-        return $this->belongsTo('App\Models\User','client_by','id');
+        return $this->belongsTo('App\Models\User','leader_id','id');
+    }
+
+    public function client()
+    {
+        // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
+        return $this->belongsTo('App\Models\Marketings\Clients','client_id','id');
+    }
+
+    public function task_project() {
+        // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
+        return $this->hasMany('App\Models\Projects\TaskProject');
     }
 }

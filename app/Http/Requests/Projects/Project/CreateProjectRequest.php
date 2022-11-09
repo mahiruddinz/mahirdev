@@ -24,11 +24,16 @@ class CreateProjectRequest extends FormRequest
     public function rules()
     {
         return [
+            'client_id' => 'required',
+            'image' => '',
             'name' => 'required',
             'type' => 'required',
             'platform' => 'required',
-            'client_by' => 'required',
+            'start_date' => '',
+            'due_date' => '',
+            'leader' => 'required',
             'description' => 'required',
+            
         ];
     }
     public function messages()
@@ -37,7 +42,6 @@ class CreateProjectRequest extends FormRequest
             'type.required' => 'Tipe Project harus di isi!',
             'platform.required' => 'Platform harus di isi!',
             'name.required' => 'Nama harus di isi!',
-            'client_by.required' => 'Client Closing harus di isi!',
             'description.required' => 'Deskripsi harus di isi!',
         ];
     }

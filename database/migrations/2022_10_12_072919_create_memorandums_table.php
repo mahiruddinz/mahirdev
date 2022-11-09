@@ -15,7 +15,6 @@ class CreateMemorandumsTable extends Migration
     {
         Schema::create('memorandums', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->length(110)->unsigned();
             $table->integer('project_id')->length(110)->unsigned();
             $table->timestamps();
         });

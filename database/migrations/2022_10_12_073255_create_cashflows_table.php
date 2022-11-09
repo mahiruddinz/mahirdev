@@ -15,7 +15,6 @@ class CreateCashflowsTable extends Migration
     {
         Schema::create('cashflows', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->length(110)->unsigned();
             $table->string('name');
             $table->double('amount');
             $table->integer('created_by');

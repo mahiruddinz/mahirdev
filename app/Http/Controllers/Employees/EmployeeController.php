@@ -70,6 +70,7 @@ class EmployeeController extends Controller
     public function store(CreateEmployeeRequest $request)
     {
         $validated = $request->validated();
+        //dd($validated);
         $this->employeeService->createData($request->all());
 
         return redirect()->route('user.index')->with(['response' => true, 'type' => 'success', 'title' => 'Berhasil!', 'alert' => 'success', 'message' => 'Data karyawan berhasil di tambah']);

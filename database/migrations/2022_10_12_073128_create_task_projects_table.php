@@ -15,6 +15,18 @@ class CreateTaskProjectsTable extends Migration
     {
         Schema::create('task_projects', function (Blueprint $table) {
             $table->id();
+            $table->integer('project_id');
+            $table->string('name');
+            $table->string('target');
+            $table->string('platform');
+            $table->integer('amount');
+            $table->text('description');
+            $table->datetime('start_time');
+            $table->datetime('due_time');
+            $table->text('link_report');
+            $table->string('status');
+            $table->datetime('completed_time')->nullable();
+            $table->enum('is_approved', ['0', '1']);
             $table->timestamps();
         });
     }

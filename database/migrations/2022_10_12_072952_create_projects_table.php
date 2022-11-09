@@ -15,16 +15,18 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->integer('client_id')->length(110)->unsigned();
             $table->string('name');
             $table->enum('type', ['Aksi', 'Bulanan', 'Outsourcing', 'Endorse', 'KOL', 'Press Release', 'Takedown', 'Verified', 'Etc']);
             $table->string('platform');
             $table->text('description');
             $table->dateTime('start_date');
             $table->dateTime('due_date');
-            $table->integer('client_by')->length(110)->unsigned();
+            $table->enum('priority', ['Low', 'Medium', 'High']);
+            $table->enum('status', ['Pending', 'Inprogress', 'Completed']);
             $table->timestamps();
+
         });
+
     }
 
     /**
