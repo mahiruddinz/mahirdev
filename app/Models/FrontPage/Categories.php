@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categories extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+    protected $guarded = ['id'];
+    public function blog()
+    {
+        return $this->hasMany('App\Models\FrontPage\Blog');
+    }
 }

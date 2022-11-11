@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-group mb-2">
                         <label>Alamat</label>
-                        <textarea type="text" name="address" class="form-control" placeholder="Alamat" rows="5"></textarea>
+                        <textarea type="text" name="address" class="form-control" id="summernote" placeholder="Alamat" rows="5"></textarea>
                     </div><hr>
                     <div class="hstack gap-1 justify-content-end">
                         <button type="reset" class="btn btn-dark"><i class="mdi mdi-cancel"></i> Reset</button>

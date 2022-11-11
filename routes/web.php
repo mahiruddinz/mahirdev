@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Employees\EmployeeController;
 use App\Http\Controllers\Projects\ProjectController;
@@ -9,9 +8,12 @@ use App\Http\Controllers\Marketings\ClientController;
 use App\Http\Controllers\GeneralAffairs\AssetController;
 
 use App\Http\Controllers\FrontPage\ServicesController;
+use App\Http\Controllers\FrontPage\CategoriesController;
+use App\Http\Controllers\FrontPage\BlogController;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 use App\Http\Controllers\HomeController;
-
+use App\Models\FrontPage\Blog;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,12 +25,14 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('landing.index');
+Route::get('/', function (Blog $blog) {
+    $blog = Blog::all();
+    return view('landing.index', ['blog' => $blog]);
 });
 Route::prefix('services')->group(function () {
     Route::get('branding-protection', [ServicesController::class, 'brandingProtection'])->name('branding.protection');
 });
+Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Auth::routes();
 Route::middleware('auth')->group(function() {
 	Route::get('home', [HomeController::class, 'index'])->name('home');
@@ -50,10 +54,26 @@ Route::middleware('auth')->group(function() {
         Route::resource('assets', AssetController::class);  
         Route::get('assets/{id}/delete/', [AssetController::class, 'delete'])->name('assets.delete');
     });
+    Route::middleware('seo')->prefix('seo')->group(function () {
+        Route::resource('categories', CategoriesController::class);  
+        Route::resource('blogs', BlogController::class);  
+       
+        Route::resource('services', ServicesController::class);  
+        Route::get('categories/{id}/delete/', [AssetController::class, 'delete'])->name('categories.delete');
+        Route::get('blogs/{id}/delete/', [BlogController::class, 'delete'])->name('blogs.delete');
+        Route::get('services/{id}/delete/', [ServicesController::class, 'delete'])->name('services.delete');
+    });
+    Route::get('check_slug', function () {
+        $slug = SlugService::createSlug(App\Models\FrontPage\Blog::class, 'slug', request('title'));
+        return response()->json(['slug' => $slug]);
+    })->name('check_slug');
     Route::get('user/list', [EmployeeController::class, 'getList'])->name('user.list');
     Route::get('assets/list', [AssetController::class, 'getList'])->name('assets.list');
     Route::get('client/list', [ClientController::class, 'getList'])->name('client.list');
     Route::get('task-project/list', [TaskProjectController::class, 'getList'])->name('task.list');
+    Route::get('categories/list', [CategoriesController::class, 'getList'])->name('categories.list');
+    Route::get('blogs/list', [BlogController::class, 'getList'])->name('blogs.list');
+    Route::get('services/list', [ServicesController::class, 'getList'])->name('services.list');
 });
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');

@@ -7,6 +7,13 @@ if (! function_exists('moneyFormat')) {
     }
 }
 
+if (! function_exists('format_tags')) {
+    function format_tags($tags)
+    {
+        return "".trim($tags).",";
+    }
+}
+
 if (! function_exists('format_datetime')) {
     function format_datetime($a) {
 		$month = [

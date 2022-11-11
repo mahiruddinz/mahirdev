@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        return view('landing.index');
+        return view('home');
     }
 
     public function root()

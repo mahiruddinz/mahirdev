@@ -5,7 +5,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                    <h1>Creative Solutions For Everyone</h1>
+                    <h1>Creative Solutions For Everyone </h1>
                     <p class="text-dark">PT Digital Indonesia Bersatu is your future digital marketing partner with a team of professionals that builds an branding profile to enhance brand growth every step of the way.</p>
                 </div>
             </div>
@@ -201,27 +201,28 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($blog as $value)
             <div class="col-lg-4 col-md-6 col-12">
 
                 <div class="single-blog wow fadeInUp" data-wow-delay=".2s">
                     <div class="blog-img">
-                        <a href="blog-single-sidebar.html"><img class="thumb" src="{{ URL::asset('landing/assets/images/blog/blog-grid1.jpg') }}" alt="#"></a>
+                        <a href="{{ route('blog.show', $value->slug) }}"><img class="thumb" src="{{ URL::asset('blog-img/'.$value->thumbnail.'') }}" alt="#"></a>
                     </div>
                     <div class="blog-content">
-                        <span class="date">Mar 12, 2023</span>
-                        <h4 class="title"><a href="blog-single-sidebar.html">Bring to the table win-win survival
-                                strategies.</a></h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                            has been the standard.</p>
+                        <span class="date">{{ format_datetime($value->created_at) }}</span>
+                        <h4 class="title"><a href="{{ route('blog.show', $value->slug) }}">{!! (strlen($value->title) > 55) ? ''.substr(nl2br($value->title),0, 55).'...'  : nl2br($value->title) !!}</a></h4>
+                        <div class="">
+                            <p>{!! (strlen(strip_tags($value->content)) > 100) ? ''.substr(nl2br(strip_tags($value->content)),0, 100).'...'  : nl2br(strip_tags($value->content)) !!}</p>
+                        </div>
                         <div class="meta-details">
-                            <a href="javascript:void(0)"><img src="{{ URL::asset('landing/assets/images/blog/comment1.jpg') }}" alt="#">
-                                <span>By Jonson
-                                    deco</span></a>
+                            <a href="javascript:void(0)"><img src="{{ URL::asset('images/'.$value->user->thumbnail.'') }}" alt="#">
+                                <span>{{ $value->user->name }}</span></a>
                         </div>
                     </div>
                 </div>
 
             </div>
+            @endforeach
 
         </div>
     </div>

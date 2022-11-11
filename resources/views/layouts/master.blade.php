@@ -21,8 +21,8 @@
         <link href="{{ URL::asset('tester/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ URL::asset('tester/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ URL::asset('tester/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ URL::asset('tester/assets/libs/summernote/summernote.css') }}" rel="stylesheet">
-        <script src="{{ URL::asset('tester/assets/libs/summernote/summernote.js') }}"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
         <!--datatable responsive css-->
         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
@@ -192,6 +192,23 @@
                             </div>
                         </li>
                         @endif
+                        @if (in_array(Auth::user()->role, ['SEO','Operator']) == true)
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarSEO" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarHumanResource">
+                                <i class="bx bx-podcast"></i> <span data-key="t-dashboards">SEO</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarSEO">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('categories.index') }}" class="nav-link"> Data Kategori Artikel </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('blogs.index') }}" class="nav-link"> Data Konten Artikel </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        @endif
                         @if (in_array(Auth::user()->role, ['Leader Project', 'Project', 'Marketing', 'Operator']) == true)
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarProject" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProject">
@@ -335,11 +352,28 @@
             $(document).ready(function() {
                 $('.select2').select2();
                 $('#summernote').summernote({
-                    placeholder: 'Deskripsi Tugas Project',
-                    tabsize: 2,
-                    height: 100
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['codeview']]
+                    ],
+                    height: 500,
                 });
 
+            });
+        </script>
+        <script>
+            $('#title').change(function(e) {
+            $.get('{{ url('check_slug') }}', 
+            { 'title': $(this).val() }, 
+            function( data ) {
+                $('#slug').val(data.slug);
+            }
+            );
             });
         </script>
         <!-- JAVASCRIPT -->
@@ -350,6 +384,8 @@
         <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- Include Choices JavaScript (latest) -->
+        <script src="{{ URL::asset('tester/assets/libs/choices.js') }}"></script>
 
         <script src="{{ URL::asset('tester/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ URL::asset('tester/assets/libs/simplebar/simplebar.min.js') }}"></script>

@@ -51,6 +51,12 @@ input {
     border-color: #33B8A5
 }
 
+.truncate {
+    width: 290px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 select {
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;

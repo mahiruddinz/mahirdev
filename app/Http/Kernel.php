@@ -58,6 +58,7 @@ class Kernel extends HttpKernel
         'employee' => \App\Http\Middleware\Employees\Employee::class,
         'leader.project' => \App\Http\Middleware\Projects\LeaderProject::class,
         'project' => \App\Http\Middleware\Projects\Project::class,
+        'seo' => \App\Http\Middleware\FrontPage\SEO::class,
         'marketing' => \App\Http\Middleware\Marketings\Marketing::class,
         'general.affairs' => \App\Http\Middleware\GeneralAffairs\GeneralAffair::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

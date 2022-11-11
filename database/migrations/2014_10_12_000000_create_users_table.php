@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->dateTime('birthdate');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['Operator', 'GA', 'HRD', 'Finance', 'Marketing', 'Creative', 'Project', 'Leader Project', 'Leader Creative'])->default('Operator');
+            $table->string('thumbnail')->default('user.png');
+            $table->enum('role', ['Operator', 'GA', 'HRD', 'SEO', 'Finance', 'Marketing', 'Creative', 'Project', 'Leader Project', 'Leader Creative'])->default('Operator');
             $table->dateTime('join_date');
             $table->unsignedBigInteger('salary')->unsigned();
             $table->text('address');
