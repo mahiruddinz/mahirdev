@@ -29,9 +29,13 @@ Route::get('/', function (Blog $blog) {
     $blog = Blog::all();
     return view('landing.index', ['blog' => $blog]);
 });
-Route::prefix('services')->group(function () {
-    Route::get('branding-protection', [ServicesController::class, 'brandingProtection'])->name('branding.protection');
-});
+Route::get('services-branding-protection', [ServicesController::class, 'brandingProtection'])->name('branding.protection');
+Route::get('services-creative-agency', [ServicesController::class, 'creativeAgency'])->name('creative-agency');
+
+Route::get('services-media-press-release', [ServicesController::class, 'mediaPressRelease'])->name('media-press-release');
+Route::get('services-website-development', [ServicesController::class, 'websiteDevelopment'])->name('website-development');
+Route::get('services-kol-management', [ServicesController::class, 'kolManagement'])->name('kol-management');
+Route::get('services-outsourcing-team', [ServicesController::class, 'outsourcingTeam'])->name('outsourcing-team');
 Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Auth::routes();
 Route::middleware('auth')->group(function() {

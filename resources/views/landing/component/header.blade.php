@@ -16,18 +16,18 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                         <li class="nav-item">
-                                            <a href="#" class="active" aria-label="Toggle navigation">Beranda</a>
+                                            <a href="{{ url('') }}" class="active" aria-label="Toggle navigation">Beranda</a>
                                         </li>
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse" data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Services</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="services.html">Branding Protection</a>
+                                            <li class="nav-item"><a href="{{ route('branding.protection') }}">Branding Protection</a>
                                             </li>
-                                            <li class="nav-item"><a href="service-details.html">Creative Agency</a></li>
-                                            <li class="nav-item"><a href="service-details.html">Media Press Release</a></li>
-                                            <li class="nav-item"><a href="service-details.html">Website Development</a></li>
-                                            <li class="nav-item"><a href="service-details.html">KOL & Influencer Management</a></li>
-                                            <li class="nav-item"><a href="service-details.html">Buzzer Outsourcing</a></li>
+                                            <li class="nav-item"><a href="{{ route('creative-agency') }}">Creative Agency</a></li>
+                                            <li class="nav-item"><a href="{{ route('media-press-release') }}">Media Press Release</a></li>
+                                            <li class="nav-item"><a href="{{ route('website-development') }}">Website Development</a></li>
+                                            <li class="nav-item"><a href="{{ route('kol-management') }}">KOL & Influencer Management</a></li>
+                                            <li class="nav-item"><a href="{{ route('outsourcing-team') }}">Outsourcing Team</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

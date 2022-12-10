@@ -1,12 +1,12 @@
 
 @extends('layouts.master')
-@section('title') Tambah Barang @endsection
+@section('title') Tambah Tugas Project @endsection
 @section('css')
 @endsection
 @section('content')
 @component('components.breadcrumb')
-@slot('li_1') Data Barang @endslot
-@slot('title') Tambah Barang @endslot
+@slot('li_1') Data Tugas Project @endslot
+@slot('title') Tambah Tugas Project @endslot
 @endcomponent
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -17,7 +17,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1"><i class="fa fa-edit"></i> Ubah Project</h4>
+                    <h4 class="card-title mb-0 flex-grow-1"><i class="fa fa-edit"></i> Ubah Data</h4>
                 </div>
                 <div class="card-body">
                     <form method="post" action="{{ route('project.update', $data->id) }}" enctype="multipart/form-data">

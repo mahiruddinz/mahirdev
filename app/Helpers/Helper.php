@@ -133,6 +133,30 @@ if (! function_exists('status_info')) {
 	}
 }
 
+
+if (! function_exists('order_info')) {
+    function order_info($i) {
+		if ($i == 'Processing') {
+			$color = 'info';
+		} elseif ($i == 'In Progress') {
+			$color = 'primary';
+		} elseif ($i == 'Error') {
+			$color = 'danger';
+		} elseif ($i == 'Canceled') {
+			$color = 'Error';
+        } elseif ($i == 'Pending') {
+			$color = 'warning';
+        } elseif ($i == 'Completed') {
+			$color = 'success';
+		} elseif ($i == 'Success') {
+			$color = 'success';
+		} else {
+			$color = 'secondary';
+		}
+		return $color;
+	}
+}
+
 if (! function_exists('platform')) {
     function platform($i) {
 		if ($i == 'Twitter') {

@@ -16,7 +16,50 @@ class ServicesController extends Controller
     {
         return view('landing.services.branding-protection');
     }
+    public function creativeAgency()
+    {
+        return view('landing.services.creative-agency');
+    }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function websiteDevelopment()
+    {
+        return view('landing.services.website-development');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function mediaPressRelease()
+    {
+        return view('landing.services.media-press-release');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function kolManagement()
+    {
+        return view('landing.services.kol-management');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function outsourcingTeam()
+    {
+        return view('landing.services.outsourcing-team');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -10,7 +10,7 @@
         <div class="col-xl-12">
             @if (Auth::user()->role <> 'Project')
             <div class="hstack gap-1 justify-content-end mb-2">
-                <a href="{{ route('project.create') }}"class="btn btn-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Detail"><i class="fa fa-plus mr-1"></i> Tambah Data</a>
+                <a href="{{ route('project.create') }}"class="btn btn-success" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Detail"><i class="fa fa-plus mr-1"></i> Tambah Data</a>
             </div>
             @endif
             <div class="row">

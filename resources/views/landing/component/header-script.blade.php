@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="{{ URL::asset('landing/assets/css/glightbox.min.css') }}" />
 <link rel="stylesheet" href="{{ URL::asset('landing/assets/css/main.css') }}" />
 <script src="https://kit.fontawesome.com/931972a100.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

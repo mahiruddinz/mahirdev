@@ -11,7 +11,6 @@ use App\Http\Requests\FrontPage\CreateCategoriesRequest;
 // LOAD MODEL & DATATABLES 
 use App\Models\FrontPage\Categories;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Datatables;
 
 class CategoriesController extends Controller
 {

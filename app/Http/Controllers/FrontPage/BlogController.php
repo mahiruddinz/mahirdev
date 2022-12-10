@@ -85,7 +85,7 @@ class BlogController extends Controller
 		if ($request['thumbnail']) {
             $file = $request['thumbnail'];
             $filename = $file->getClientOriginalName();
-            $file->move(public_path('blog-img'), $filename);
+            $file->storeAs(public_path('blog-img'), $filename);
         } else {
             echo 'lah kok ilang?!'; die;
         }

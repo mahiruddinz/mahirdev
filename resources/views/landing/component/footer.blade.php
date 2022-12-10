@@ -23,21 +23,22 @@
                     </div>
                     <div class="col-lg-8 col-md-8 col-12">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12">
+                            <div class="col-lg-6 col-md-6 col-12">
 
                                 <div class="single-footer f-link">
                                     <h3>Services</h3>
                                     <ul>
-                                        <li><a href="service-details.html">Creative Agency</a></li>
-                                        <li><a href="service-details.html">Media Press Release</a></li>
-                                        <li><a href="service-details.html">Website Development</a></li>
-                                        <li><a href="service-details.html">KOL & Influencer Management</a></li>
-                                        <li><a href="service-details.html">Buzzer Outsourcing</a></li>
+                                        <li><a href="{{ route('branding.protection') }}">Branding Protection</a></li>
+                                        <li><a href="{{ route('creative-agency') }}">Creative Agency</a></li>
+                                        <li><a href="{{ route('media-press-release') }}">Media Press Release</a></li>
+                                        <li><a href="{{ route('website-development') }}">Website Development</a></li>
+                                        <li><a href="{{ route('kol-management') }}">KOL & Influencer Management</a></li>
+                                        <li><a href="{{ route('outsourcing-team') }}">Outsourcing Team</a></li>
                                     </ul>
                                 </div>
 
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
+                            <div class="col-lg-6 col-md-6 col-12">
 
                                 <div class="single-footer f-link">
                                     <h3>Company</h3>
@@ -47,17 +48,6 @@
                                         <li><a href="javascript:void(0)">Jobs</a></li>
                                         <li><a href="javascript:void(0)">Press</a></li>
                                         <li><a href="javascript:void(0)">Contact Us</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-
-                                <div class="single-footer f-link">
-                                    <h3>Legal</h3>
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
                                     </ul>
                                 </div>
 

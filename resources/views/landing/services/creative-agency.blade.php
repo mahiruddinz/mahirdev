@@ -5,13 +5,13 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                    <h1>Take your brand to <span class="text-success">Grow & Clean!</span></h1>
-                    <p class="text-dark">Raih pertumbuhan optimal Anda melalui Branding Protection dengan strategi yang untuk menjaga kualitas & reputasi brand Anda.</p>
+                    <h1>Welcome to a new era of <span class="text-danger">Digital Advertising!</span></h1>
+                    <p class="text-dark">Kami menyediakan jasa foto & video kreatif untuk platform media sosial sehingga Anda dapat terlibat dengan audiens Anda di mana pun mereka berada.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_uhcfeaa9.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_KxHSo3oGhc.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
                 </div>
             </div>
         </div>
@@ -24,7 +24,6 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center mb-4">
-                    <h3 class="fw-bold mb-2" data-wow-delay=".4s">Branding Protection Strategy & Placement</h3>
                 </div>
             </div>
         </div>
@@ -32,24 +31,24 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".2s">
-                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_zrqthn6o.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Issue Monitoring</b></a></h6>
-                        <p>Dengan alat & teknologi kami akan membantu anda untuk memantau segala hal tentang brand anda.</p>
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_uecuu64m.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
+                        <h6 class="text-dark"><a href="#"><b>Design & Content Copywriting</b></a></h6>
+                        <p>Kami memberikan rekomendasi dan strategi untuk meningkatkan jangkauan pada akun brand anda.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".4s">
-                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_kq41y3pa.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Quick Action</b></a></h6>
-                        <p>Tim bergerak cepat untuk mengatasi masalah komunikasi ataupun issue mengenai brand</p>
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_0zv8teye.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
+                        <h6 class="text-dark"><a href="#"><b>Shooting Video / Photo Catalog</b></a></h6>
+                        <p>Kami juga menyediakan jasa photo product/katalog ataupun shooting video untuk keperluan advertising brand.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".6s">
-                        <lottie-player src="https://lottie.host/ae9735e3-a685-45b7-8055-507b8adab43c/21ojiXZJiD.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Updates & Report</b></a></h6>
-                        <p>Kami menyediakan aplikasi teknis mengenai update laporan untuk membuat Anda up to date!</p>
-                    </div>>
+                        <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_55smx65u.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
+                        <h6 class="text-dark"><a href="#"><b>Mapping Area With Drone</b></a></h6>
+                        <p>Jasa pemetaan lahan dengan menggunakan drone dan eksekutor yang telah ber-sertifikasi</p>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -62,14 +61,17 @@
                 <div class="col-lg-6 col-md-12 col-12">
 
                     <div class="info-text wow fadeInLeft" data-wow-delay=".3s">
-                        <h2>Leave it to our professional team!</h2>
-                        <h6 class="text-dark" style="line-height: 25px">Besar, kecil, sedang tidaklah penting. Tim kami tetap proffesional terhadap klien untuk merekomendasikan strategi dan solusi atas issue yang ada.
+                        <div class="main-icon">
+                            <i class="lni lni-angellist"></i>
+                        </div>
+                        <h2>Efortless, but powerfull!</h2>
+                        <h6 class="text-dark" style="line-height: 25px">Anda tidak perlu memikirkan bentuk ide dan strategi, waktu anda bisa terhemat sampai 80% untuk menghandle sektor lain.
                         </h6>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="info-image wow fadeInRight" data-wow-delay=".5s">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3zspbnqi.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
+                        <img class="ss1" src="{{ URL::asset('landing/assets/images/app-ss/l2-hero-image.png') }}" alt="#">
                     </div>
                 </div>
             </div>
@@ -84,8 +86,15 @@
                 <div class="col-lg-6 col-md-12 col-12">
 
                     <div class="info-text wow fadeInRight" data-wow-delay=".5s">
-                        <h2>Base Data Dashboard</h2>
-                        <h6 class="text-dark" style="line-height: 25px">Anda bisa mengakses aktifitas dan strategi yang akan dijalankan tanpa perlu menunggu, kapan saja & dimana saja. Sangat praktis, bukan?</h6>
+                        <h2>Banyak Benefitnya</h2>
+                        <h6 class="text-dark" style="line-height: 35px">
+                            <ul class="list">
+                                <li><i class="lni lni-checkmark-circle"></i> Harga yang bersaing & benefit melimpah</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Dikerjakan Desainer & Content Creator Profesional</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Meningkatkan Engagement & Brand Awareness</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Tak Perlu Pusing Cari Ide Konten & Desain.</li>
+                            </ul>
+                        </h6>
 
                     </div>
 

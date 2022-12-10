@@ -163,66 +163,120 @@
         </div>
     </div>
 </section>
-<section class="section newsletter">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="image">
-                    <img src="{{ URL::asset('landing/assets/images/newsletter/newsletter-img.png') }}" alt="#">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="content">
-                    <h5>Join our community</h5>
-                    <h3>Subscribe our Newsletter to get regular updates</h3>
-                    <form action="#" method="get" target="_blank" class="newsletter-form">
-                        <input name="email" type="email" placeholder="Your email address">
-                        <div class="button">
-                            <button type="submit" class="btn">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-
-    <section id="blog" class="blog-section section">
+<section id="team" class="team section">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h3 class="wow zoomIn" data-wow-delay=".2s">Blogs</h3>
-                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Latest News</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                        Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Our team</h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            @foreach ($blog as $value)
-            <div class="col-lg-4 col-md-6 col-12">
 
-                <div class="single-blog wow fadeInUp" data-wow-delay=".2s">
-                    <div class="blog-img">
-                        <a href="{{ route('blog.show', $value->slug) }}"><img class="thumb" src="{{ URL::asset('blog-img/'.$value->thumbnail.'') }}" alt="#"></a>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-team wow fadeInUp" data-wow-delay=".2s">
+
+                    <div class="image">
+                        <img src="{{ URL::asset('landing/assets/images/team/gianeoo.png') }}" alt="#">
+
+                        <ul class="social">
+                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-behance-original"></i></a></li>
+                        </ul>
+
                     </div>
-                    <div class="blog-content">
-                        <span class="date">{{ format_datetime($value->created_at) }}</span>
-                        <h4 class="title"><a href="{{ route('blog.show', $value->slug) }}">{!! (strlen($value->title) > 55) ? ''.substr(nl2br($value->title),0, 55).'...'  : nl2br($value->title) !!}</a></h4>
-                        <div class="">
-                            <p>{!! (strlen(strip_tags($value->content)) > 100) ? ''.substr(nl2br(strip_tags($value->content)),0, 100).'...'  : nl2br(strip_tags($value->content)) !!}</p>
+
+                    <div class="info-head">
+
+                        <div class="info-box">
+                            <h4 class="name"><a href="javascript:void(0)">Dahlia Moore</a></h4>
+                            <span class="designation">Senior Manager</span>
                         </div>
-                        <div class="meta-details">
-                            <a href="javascript:void(0)"><img src="{{ URL::asset('images/'.$value->user->thumbnail.'') }}" alt="#">
-                                <span>{{ $value->user->name }}</span></a>
-                        </div>
+
                     </div>
                 </div>
-
             </div>
-            @endforeach
+
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-team wow fadeInUp" data-wow-delay=".4s">
+
+                    <div class="image">
+                        <img src="{{ URL::asset('landing/assets/images/team/andi.png') }}" alt="#">
+
+                        <ul class="social">
+                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-behance-original"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="info-head">
+
+                        <div class="info-box">
+                            <h4 class="name"><a href="javascript:void(0)">Jhone digo</a></h4>
+                            <span class="designation">Markeitng</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-team wow fadeInUp" data-wow-delay=".6s">
+
+                    <div class="image">
+                        <img src="{{ URL::asset('landing/assets/images/team/team3.jpg') }}" alt="#">
+
+                        <ul class="social">
+                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-behance-original"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="info-head">
+
+                        <div class="info-box">
+                            <h4 class="name"><a href="javascript:void(0)">Zara tingo</a></h4>
+                            <span class="designation">Web Developer</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-team wow fadeInUp" data-wow-delay=".8s">
+
+                    <div class="image">
+                        <img src="{{ URL::asset('landing/assets/images/team/team4.jpg') }}" alt="#">
+
+                        <ul class="social">
+                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-behance-original"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="info-head">
+
+                        <div class="info-box">
+                            <h4 class="name"><a href="javascript:void(0)">David Zone</a></h4>
+                            <span class="designation">SEO Expert</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

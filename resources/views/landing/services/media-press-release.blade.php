@@ -5,13 +5,13 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                    <h1>Take your brand to <span class="text-success">Grow & Clean!</span></h1>
-                    <p class="text-dark">Raih pertumbuhan optimal Anda melalui Branding Protection dengan strategi yang untuk menjaga kualitas & reputasi brand Anda.</p>
+                    <h1>Make your campaign viral with Media Press Release</h1>
+                    <p class="text-dark">Tingkatkan reputasi Anda dengan diliput oleh media online terbaik! Penerbitan mudah dengan jaminan penerbitan 100% dan cepat. Layanan pers kami memiliki jaringan media berita dan ratusan media online terbaik untuk siaran pers perusahaan atau merek Anda.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_uhcfeaa9.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_oM7iJ42y70.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center mb-4">
-                    <h3 class="fw-bold mb-2" data-wow-delay=".4s">Branding Protection Strategy & Placement</h3>
+                    <h3 class="fw-bold mb-2" data-wow-delay=".4s">Mengapa Press Release itu penting ?</h3>
                 </div>
             </div>
         </div>
@@ -32,23 +32,23 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".2s">
-                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_zrqthn6o.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Issue Monitoring</b></a></h6>
-                        <p>Dengan alat & teknologi kami akan membantu anda untuk memantau segala hal tentang brand anda.</p>
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_xkdwwmbx.json"  background="transparent"  speed="1" width="50px" height="50px" loop autoplay></lottie-player>    <hr>                    
+                    <h6 class="text-dark mt-2"><a href="#"><b>Launching Product</b></a></h6>
+                        <p>Kamu bisa menggunakan Media Press Release untuk kebutuhan launching produk kamu agar semakin viral</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".4s">
-                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_kq41y3pa.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Quick Action</b></a></h6>
-                        <p>Tim bergerak cepat untuk mengatasi masalah komunikasi ataupun issue mengenai brand</p>
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_2MeppDAfjJ.json"  background="transparent"  speed="1" width="50px" height="50px" loop autoplay></lottie-player>  <hr>                      
+                        <h6 class="text-dark mt-2"><a href="#"><b>Campaign & Event</b></a></h6>
+                        <p>Campaign ataupun Event harus terkenal, maka dari itu peran Media Press Release sangat penting disini.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".6s">
-                        <lottie-player src="https://lottie.host/ae9735e3-a685-45b7-8055-507b8adab43c/21ojiXZJiD.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
-                        <h6 class="text-dark"><a href="#"><b>Updates & Report</b></a></h6>
-                        <p>Kami menyediakan aplikasi teknis mengenai update laporan untuk membuat Anda up to date!</p>
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_fsi5RH73N4.json"  background="transparent"  speed="1" width="50px" height="50px" loop autoplay></lottie-player><hr>                        
+                        <h6 class="text-dark mt-2"><a href="#"><b>Optimasi SEO</b></a></h6>
+                        <p>Semakin banyak kata kunci yang masuk di Media Press Release maka akan semakin mudah website kamu naik!</p>
                     </div>>
                 </div>
             </div>
@@ -62,14 +62,14 @@
                 <div class="col-lg-6 col-md-12 col-12">
 
                     <div class="info-text wow fadeInLeft" data-wow-delay=".3s">
-                        <h2>Leave it to our professional team!</h2>
-                        <h6 class="text-dark" style="line-height: 25px">Besar, kecil, sedang tidaklah penting. Tim kami tetap proffesional terhadap klien untuk merekomendasikan strategi dan solusi atas issue yang ada.
+                        <h2>Grow up your personal branding!</h2>
+                        <h6 class="text-dark" style="line-height: 25px">Selain dari 3 manfaat di atas, masih banyak lagi benefit dari merilis nama kamu di Media Nasional, salah satunya yaitu untuk personal branding kamu.
                         </h6>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="info-image wow fadeInRight" data-wow-delay=".5s">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3zspbnqi.json"  background="transparent"  speed="1"  loop autoplay></lottie-player><hr>
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ddr3jxu2.json"  background="transparent"  speed="1" width="50px" height="50px" loop autoplay></lottie-player><hr>   
                     </div>
                 </div>
             </div>
@@ -78,14 +78,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-image wow fadeInLeft" data-wow-delay=".3s">
-                        <img class="ss2" style="border: 1px solid; padding: 10px; box-shadow: 5px 10px;" src="{{ URL::asset('landing/assets/images/dashboard.png') }}" alt="#">
+                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gckvznnm.json"  background="transparent"  speed="1" width="50px" height="50px" loop autoplay></lottie-player><hr>   
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
 
                     <div class="info-text wow fadeInRight" data-wow-delay=".5s">
-                        <h2>Base Data Dashboard</h2>
-                        <h6 class="text-dark" style="line-height: 25px">Anda bisa mengakses aktifitas dan strategi yang akan dijalankan tanpa perlu menunggu, kapan saja & dimana saja. Sangat praktis, bukan?</h6>
+                        <h2>Apa lagi yang bisa dilakukan siaran pers selain penerbitan?</h2>
+                        <h6 class="text-dark" style="line-height: 25px">Release media nasional adalah cara paling mudah untuk menilai seseorang atau merek layak mendapat centang biru terverifikasi Instagram. Anda mungkin perlu tahu cara mendapatkan centang biru di Instagram</h6>
 
                     </div>
 

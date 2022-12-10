@@ -1,7 +1,7 @@
 
 
 <!doctype html>
-<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar-size="lg" data-sidebar="light" data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="horizontal" data-topbar="dalightrk" data-layout-mode="light" data-sidebar-size="lg" data-sidebar="light" data-sidebar-image="none" data-preloader="disable">
 
 <head>
         
@@ -83,7 +83,7 @@
                                     <img src="{{ URL::asset('tester/assets/images/logo-sm.png') }}" alt="" height="22" />
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ URL::asset('tester/assets/images/logo-dark.png') }}" alt="" height="22" />
+                                    <img src="{{ URL::asset('tester/assets/images/logo-black.png') }}" alt="" height="100" />
                                 </span>
                             </a>
 
@@ -92,7 +92,7 @@
                                     <img src="{{ URL::asset('tester/assets/images/logo-sm.png') }}" alt="" height="22" />
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ URL::asset('tester/assets/images/logo-light.png') }}" alt="" height="22" />
+                                    <img src="{{ URL::asset('tester/assets/images/logo-white.png') }}" alt="" height="100" />
                                 </span>
                             </a>
                         </div>
@@ -105,14 +105,6 @@
                             </span>
                         </button>
 
-                        <!-- App Search-->
-                        <form class="app-search d-none d-md-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="" />
-                                <span class="mdi mdi-magnify search-widget-icon"></span>
-                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
-                            </div>
-                        </form>
                     </div>
 
                     <div class="d-flex align-items-center">
